@@ -76,13 +76,15 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
         <resources>
+            <resource>
+                <!-- 指定处理哪个目录下的资源文件 -->
+                <directory>src/main/resources</directory>
+                <!--注意此次必须要放在此目录下才能被访问到-->
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
             <resource>
                 <!-- 指定处理哪个目录下的资源文件 -->
                 <directory>src/main/webapp</directory>

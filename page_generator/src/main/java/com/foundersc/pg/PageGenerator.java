@@ -49,7 +49,6 @@ public class PageGenerator {
         return parsedTables;
     }
 
-
     public static void initDataSource(String url, String driverClassName, String userName, String password) {
         URL = url;
         DRIVER_CLASS_NAME = driverClassName;
