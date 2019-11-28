@@ -13,4 +13,5 @@ public class ColumnView {
 
     private String columnName;
     private String fieldName;
+    private boolean isPrimaryKey;
 }

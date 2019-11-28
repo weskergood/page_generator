@@ -10,6 +10,8 @@ import com.foundersc.pg.utils.QueryType;
 @MenuItem(title = "用户")
 public class User {
 
+    @TableColumn(msg = "用户Id", isPrimaryKey = true)
+    private Integer id;
     @TableColumn(msg = "姓名")
     @IsCondition(queryType = QueryType.EQUALS)
     private String name;
@@ -31,5 +33,13 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

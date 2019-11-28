@@ -13,4 +13,7 @@ public @interface TableColumn {
     // 是否持久化，意味着是否与数据库字段对应
     boolean isPersistence() default true;
 
+    // 定义是否是主键
+    boolean isPrimaryKey() default false;
+
 }
