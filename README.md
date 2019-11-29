@@ -1,73 +1,44 @@
-<<<<<<< HEAD
-# page_generator
+项目名：PageGenerator
+完成进度：目前仅完成了分页查询操作
+后续更新：
+  1、增加
+  2、删除
+  3、修改
+  4、带条件查询
+  5、代码优化
 
-#### 介绍
-{**以下是码云平台说明，您可以替换此简介**
-码云是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
-
-#### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
-=======
-# 用Java编写CRUD后台原型设计
-
+核心用法：
 ```java
-View view = new DefaultView(Class<T> clazz);
-
-// 创建视图属性(比如：条件查询、分页信息)
-view.setQueryConditions(Map<String queryName,String queryExpression>);
-view.setPagination(page,pageSize);
-
-PageGenerator pg = new PageGenerator(view);
-
-// 调用run()方法，会启动spring容器，这时用户可以访问
-pg.run();
+// 初始化数据源 指定连接数据库信息 
+PageGenerator.initDataSource("jdbc:mysql://localhost:3306/test?useSSL=false", "com.mysql.jdbc.Driver", "root",
+    "123456");
+// 初始化基本信息，设置对那些实体操作
+PageGenerator.initBaseData(User.class, Dept.class, Role.class);
+// 运行内置web容器
+PageGenerator.run();
 ```
 
-## 另外一种思路
+实体类配置：
 ```java
-class Model {
-  @primary_key
-  int id;
-  
-  @unique_index
-  String name;
+// 指定该类对应的数据库表名，其中字段名称与属性名称默认保持一致
+@Table(tableName = "tb_user")
+// 指定主页中左侧菜单显示文字
+@MenuItem(title = "用户")
+public class User {
+
+    // 指定该属性与数据库字段的对应关系，msg表示在查询后显示在数据表格中的列名称，isPersistence表示该属性是不是数据库表中的字段(默认为true)，isPrimaryKey表示该属性对应的数据库表字段是不是主键(默认为false)
+    @TableColumn(msg = "用户Id", isPersistence = true,isPrimaryKey = true)
+    private Integer id;
+    
+    @TableColumn(msg = "姓名")
+    // 如果配置了该注解，说明该属性将作为条件来查询数据库，queryType表示查询类型，例如：等值查询、范围查询、模糊查询等
+    
+    @IsCondition(queryType = QueryType.EQUALS)
+    private String name;
+    
+    @TableColumn(msg = "年龄")
+    @IsCondition(queryType = QueryType.BETWEEN_AND)
+    private int age;
+
 }
-
-PageGenerator pg = PageGenerator();
-
-pg.add(Model, ListView<Model>, CreateView<Model>, DetailView<Model>);
-
-pg.run();
 ```
->>>>>>> ce5c2a8989b8df1cd4db671ab455e65dc70f1331
