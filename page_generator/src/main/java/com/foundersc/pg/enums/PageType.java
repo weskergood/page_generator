@@ -1,4 +1,4 @@
-package com.foundersc.pg.utils;
+package com.foundersc.pg.enums;
 
 public enum PageType {
 

@@ -1,10 +1,9 @@
-package com.foundersc.pg.parsers;
+package com.foundersc.pg.parsers.annotations;
 
 import com.foundersc.pg.PageGenerator;
 import com.foundersc.pg.annotations.Table;
 import com.foundersc.pg.views.TableView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

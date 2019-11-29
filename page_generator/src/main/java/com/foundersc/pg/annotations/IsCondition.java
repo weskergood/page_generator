@@ -1,6 +1,6 @@
 package com.foundersc.pg.annotations;
 
-import com.foundersc.pg.utils.QueryType;
+import com.foundersc.pg.enums.QueryType;
 
 import java.lang.annotation.*;
 

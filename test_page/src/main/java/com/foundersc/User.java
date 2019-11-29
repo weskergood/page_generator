@@ -4,7 +4,7 @@ import com.foundersc.pg.annotations.IsCondition;
 import com.foundersc.pg.annotations.MenuItem;
 import com.foundersc.pg.annotations.Table;
 import com.foundersc.pg.annotations.TableColumn;
-import com.foundersc.pg.utils.QueryType;
+import com.foundersc.pg.enums.QueryType;
 
 @Table(tableName = "tb_user")
 @MenuItem(title = "用户")

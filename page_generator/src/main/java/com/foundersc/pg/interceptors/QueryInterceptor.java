@@ -1,9 +1,9 @@
 package com.foundersc.pg.interceptors;
 
 import com.foundersc.pg.PageGenerator;
-import com.foundersc.pg.parsers.AnnotationParser;
-import com.foundersc.pg.parsers.ColumnAnnotationParser;
-import com.foundersc.pg.parsers.TableAnnotationParser;
+import com.foundersc.pg.parsers.annotations.AnnotationParser;
+import com.foundersc.pg.parsers.annotations.ColumnAnnotationParser;
+import com.foundersc.pg.parsers.annotations.TableAnnotationParser;
 import com.foundersc.pg.views.ColumnView;
 import com.foundersc.pg.views.TableView;
 import org.springframework.util.ObjectUtils;

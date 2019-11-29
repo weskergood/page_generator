@@ -1,4 +1,4 @@
-package com.foundersc.pg.parsers;
+package com.foundersc.pg.parsers.annotations;
 
 import com.foundersc.pg.PageGenerator;
 import com.foundersc.pg.annotations.TableColumn;

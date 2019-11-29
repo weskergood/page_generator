@@ -1,8 +1,8 @@
 package com.foundersc.pg.interceptors;
 
 import com.foundersc.pg.PageGenerator;
-import com.foundersc.pg.parsers.AnnotationParser;
-import com.foundersc.pg.parsers.MenuAnnotationParser;
+import com.foundersc.pg.parsers.annotations.AnnotationParser;
+import com.foundersc.pg.parsers.annotations.MenuAnnotationParser;
 import com.foundersc.pg.views.MenuView;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;

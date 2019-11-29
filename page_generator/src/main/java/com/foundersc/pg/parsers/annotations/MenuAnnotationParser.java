@@ -1,4 +1,4 @@
-package com.foundersc.pg.parsers;
+package com.foundersc.pg.parsers.annotations;
 
 import com.foundersc.pg.annotations.MenuItem;
 import com.foundersc.pg.views.MenuView;
