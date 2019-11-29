@@ -9,9 +9,16 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * 指定配置信息
+ */
 @Configuration
 public class ViewConfig extends WebMvcConfigurerAdapter {
 
+    /**
+     * 配置默认页面跳转的controller
+     * @param registry
+     */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/pg/admin").setViewName("index");
@@ -20,6 +27,10 @@ public class ViewConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/pg/views/update").setViewName("common_update");
     }
 
+    /**
+     * 配置拦截器
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new IndexInterceptor()).addPathPatterns("/pg/admin");

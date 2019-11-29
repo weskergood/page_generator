@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * 返回前端数据表格的对象  (obj-->json)
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

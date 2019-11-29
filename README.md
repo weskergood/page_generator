@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # page_generator
 
 #### 介绍
@@ -37,3 +38,36 @@
 4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
 5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+=======
+# 用Java编写CRUD后台原型设计
+
+```java
+View view = new DefaultView(Class<T> clazz);
+
+// 创建视图属性(比如：条件查询、分页信息)
+view.setQueryConditions(Map<String queryName,String queryExpression>);
+view.setPagination(page,pageSize);
+
+PageGenerator pg = new PageGenerator(view);
+
+// 调用run()方法，会启动spring容器，这时用户可以访问
+pg.run();
+```
+
+## 另外一种思路
+```java
+class Model {
+  @primary_key
+  int id;
+  
+  @unique_index
+  String name;
+}
+
+PageGenerator pg = PageGenerator();
+
+pg.add(Model, ListView<Model>, CreateView<Model>, DetailView<Model>);
+
+pg.run();
+```
+>>>>>>> ce5c2a8989b8df1cd4db671ab455e65dc70f1331

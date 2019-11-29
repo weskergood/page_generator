@@ -36,6 +36,7 @@ public class ColumnAnnotationParser extends AnnotationParser {
                 }
             }
             if (list.size() > 0){
+                // 将解析后的数据放入缓存中
                 parsedTableColumns.put(c.getSimpleName().toLowerCase(), list);
             }
         }

@@ -2,6 +2,9 @@ package com.foundersc.pg.components;
 
 import com.foundersc.pg.parsers.annotations.AnnotationParser;
 
+/**
+ * 表示一个普通文本框
+ */
 public class TextBox extends Component {
 
     public TextBox(String id, String elementId) {
